@@ -1,0 +1,8 @@
+.git
+.gitignore
+.vscode
+.mvn
+target
+Dockerfile
+README*
+HELP.md
