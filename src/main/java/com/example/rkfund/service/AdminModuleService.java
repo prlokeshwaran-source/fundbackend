@@ -189,7 +189,7 @@ public class AdminModuleService {
     }
 
     public Map approve(String id, String status, String reason) {
-        if (!Set.of("approved", "rejected", "pending").contains(status.toLowerCase()))
+        if (status == null || !Set.of("approved", "rejected", "pending").contains(status.toLowerCase()))
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Status must be approved, rejected, or pending");
         Map<String, Object> changes = new java.util.HashMap<>();
         changes.put("status", status.toLowerCase());
